@@ -11,10 +11,16 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ServicoMoeda {
-    private static final String API_KEY = "f315a34d124a4823a36d94e3";
+    // 1. Lê a chave da API da variável de ambiente
+    private static final String API_KEY = System.getenv("EXCHANGE_RATE_API_KEY");
     private static final String API_URL = "https://v6.exchangerate-api.com/v6/" + API_KEY + "/latest/USD";
 
     public Map<String, Moeda> obterTaxasDeCambio() throws Exception {
+        // 2. Adiciona uma verificação para garantir que a chave foi carregada
+        if (API_KEY == null || API_KEY.trim().isEmpty()) {
+            throw new IllegalStateException("A variável de ambiente 'EXCHANGE_RATE_API_KEY' não está definida.");
+        }
+
         URL url = new URL(API_URL);
         HttpURLConnection request = (HttpURLConnection) url.openConnection();
         request.connect();

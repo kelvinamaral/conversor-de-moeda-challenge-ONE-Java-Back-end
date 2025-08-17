@@ -18,14 +18,13 @@ public class Principal {
             while (true) {
 
                 System.out.println("****************************************************************");
-                System.out.println("Seja bem-vindo(a) ao nosso conversor de moedas! ☺");
-                System.out.println("Qual conversão você deseja realizar? ");
-                System.out.println("1. Dólar ➤ Peso Argentino");
-                System.out.println("2. Peso Argentino ➤ Dólar");
-                System.out.println("3. Dólar ➤ Real Brasileiro");
-                System.out.println("4. Real Brasileiro ➤ Dólar");
-                System.out.println("5. Dólar ➤ Peso Colombiano");
-                System.out.println("6. Peso Colombiano ➤ Dólar");
+                System.out.println("Escolha qual moeda você quer converter!");
+                System.out.println("1. Dólar -> Peso Argentino");
+                System.out.println("2. Peso Argentino -> Dólar");
+                System.out.println("3. Dólar -> Real Brasileiro");
+                System.out.println("4. Real Brasileiro -> Dólar");
+                System.out.println("5. Dólar -> Peso Colombiano");
+                System.out.println("6. Peso Colombiano -> Dólar");
                 System.out.println("0. Sair do sistema");
                 System.out.println("****************************************************************");
 
@@ -33,6 +32,7 @@ public class Principal {
                     int escolha = scanner.nextInt();
 
                     if (escolha == 0) {
+                        System.out.println("Saindo do aplicativo!");
                         System.out.println("Obrigado por usar o nosso conversor!");
                         break;
                     }
@@ -44,27 +44,27 @@ public class Principal {
                     String moedaDestino;
 
                     switch (escolha) {
-                        case 1: // Dólar ➤ Peso Argentino
+                        case 1: // Dólar -> Peso Argentino
                             moedaOrigem = "USD";
                             moedaDestino = "ARS";
                             break;
-                        case 2: // Peso Argentino ➤ Dólar
+                        case 2: // Peso Argentino -> Dólar
                             moedaOrigem = "ARS";
                             moedaDestino = "USD";
                             break;
-                        case 3: // Dólar ➤ Real Brasileiro
+                        case 3: // Dólar -> Real Brasileiro
                             moedaOrigem = "USD";
                             moedaDestino = "BRL";
                             break;
-                        case 4: // Real Brasileiro ➤ Dólar
+                        case 4: // Real Brasileiro -> Dólar
                             moedaOrigem = "BRL";
                             moedaDestino = "USD";
                             break;
-                        case 5: // Dólar ➤ Peso Colombiano
+                        case 5: // Dólar -> Peso Colombiano
                             moedaOrigem = "USD";
                             moedaDestino = "COP";
                             break;
-                        case 6: // Peso Colombiano ➤ Dólar
+                        case 6: // Peso Colombiano -> Dólar
                             moedaOrigem = "COP";
                             moedaDestino = "USD";
                             break;
